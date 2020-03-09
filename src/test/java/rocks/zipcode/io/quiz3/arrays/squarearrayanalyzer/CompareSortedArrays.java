@@ -51,6 +51,6 @@ public class CompareSortedArrays {
     public void test5() {
         Integer[] array = {121, 144, 19, 161, 19, 144, 19, 11};
         Integer[] arraySquared = {121, 14641, 20736, 361, 25921, 361, 20736, 361};
-        Assert.assertFalse(SquareArrayAnalyzer.compare(array, arraySquared));
+        Assert.assertTrue(SquareArrayAnalyzer.compare(array, arraySquared));
     }
 }
