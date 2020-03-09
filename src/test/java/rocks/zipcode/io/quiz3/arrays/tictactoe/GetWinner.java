@@ -109,4 +109,5 @@ public class GetWinner {
         // then
         Assert.assertEquals(expected, actual);
     }
+
 }

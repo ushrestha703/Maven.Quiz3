@@ -5,30 +5,54 @@ package rocks.zipcode.io.quiz3.arrays;
  */
 public class TicTacToe {
 
-    public TicTacToe(String[][] board) {
-    }
+    private String[][] board;
 
-    public TicTacToe() {
-    }
+    public TicTacToe(String[][] board) { this.board = board; }
+
+    public TicTacToe() { }
 
     public String[] getRow(Integer value) {
-        return null;
+
+        String[] row = {board[value][0], board[value][1], board[value][2]};
+        return row;
     }
 
     public String[] getColumn(Integer value) {
-        return null;
+
+        String[] column = {board[0][value], board[1][value], board[2][value]};
+        return column;
     }
 
     public Boolean isRowHomogenous(Integer rowIndex) {
-        return null;
+
+        for (int i = 0; i <= 2; i++) {
+            if (((board[rowIndex][0] == "O") && (board[rowIndex][1] == "O") && (board[rowIndex][2] == "O") ||
+                    (board[rowIndex][0] == "X") && (board[rowIndex][1] == "X") && (board[rowIndex][2] == "X"))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public Boolean isColumnHomogeneous(Integer columnIndex) {
-        return null;
+        for (int i = 0; i <= 2; i++) {
+            if (((board[0][columnIndex] == "O") && (board[1][columnIndex] == "O") && (board[2][columnIndex] == "O") ||
+                    (board[0][columnIndex] == "X") && (board[1][columnIndex] == "X") && (board[2][columnIndex] == "X"))) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public String getWinner() {
-        return null;
+        if (isColumnHomogeneous(0) || isRowHomogenous(0) ) {
+            return (board[0][0]);
+
+        } else if
+        (isColumnHomogeneous(1) || isRowHomogenous(1) ) {
+            return (board[0][1]);
+        }
+        return "X";
     }
 
     public String[][] getBoard() {
