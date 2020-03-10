@@ -21,8 +21,16 @@ public class StringUtils {
     }
 
     public static String[] getAllSubStrings(String string) {
-
-        return null;
+        ArrayList<String> list = new ArrayList<>();
+        for (int i = 0; i < string.length(); i++) {
+            for (int j = i + 1; j <= string.length(); j++) {
+                String result = string.substring(i, j);
+                if(!list.contains(result)) {
+                    list.add(string.substring(i, j));
+                }
+            }
+        }
+        return list.toArray(new String[0]);
     }
 
     public static Integer getNumberOfSubStrings(String input){
